@@ -2,9 +2,9 @@
 # file: group_vars/all.yml
 
 app_logger_level: ERROR
-app_maintainer_email: emiliano.g.molina@gmail.com
-app_maintainer_name: Emiliano Molina
-app_maintainer_username: egmf
+app_maintainer_email: your.email@gmail.com
+app_maintainer_name: Your Name
+app_maintainer_username: yourusername
 app_name: echo_service
 app_port: 8080
 app_py_pkgs:
@@ -24,6 +24,6 @@ app_sys_pkgs:
   - python-dev
   - python-distribute
   - python-pip
-app_version: 1.0.3
+app_version: 1.0.0
 
 docker_api_version: 1.18
