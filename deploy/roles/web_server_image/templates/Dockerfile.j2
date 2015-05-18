@@ -1,0 +1,30 @@
+# {{ ansible_managed }}
+#
+# Python application
+#
+# Version {{ app_version }}
+
+# Set the base image to Ubuntu
+FROM ubuntu:14.04
+# File Author / Maintainer
+MAINTAINER {{ app_maintainer_name }} <{{ app_maintainer_email }}>
+
+# Install system packages
+RUN apt-get update && apt-get install -y \
+    {% for pkg in app_sys_pkgs %}{{ pkg }} {% endfor %}
+
+# Deploy python application
+COPY dist/{{ app_name  }}-{{ app_version }}.tar.gz /tmp/{{ app_name }}.tar.gz
+WORKDIR /tmp
+RUN pip install {{ app_name }}.tar.gz
+
+# Expose port
+{% if app_port  %}
+EXPOSE {{ app_port  }}
+{% endif %}
+
+# Run app
+ENTRYPOINT ["{{ app_name }}"]
+{% if app_port  %}
+CMD ["--port", "{{ app_port }}"]
+{% endif %}

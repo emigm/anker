@@ -1,0 +1,6 @@
+---
+# file: site.yml
+
+- hosts: web_servers
+  roles:
+    - multi_container

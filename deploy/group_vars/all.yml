@@ -1,0 +1,29 @@
+---
+# file: group_vars/all.yml
+
+app_logger_level: ERROR
+app_maintainer_email: emiliano.g.molina@gmail.com
+app_maintainer_name: Emiliano Molina
+app_maintainer_username: egmf
+app_name: echo_service
+app_port: 8080
+app_py_pkgs:
+  - mock
+  - pip
+  - blist
+  - pycurl
+  - strict_rfc3339
+  - tornado
+app_src_dir: ../src
+app_sys_pkgs:
+  - build-essential
+  - libcurl4-openssl-dev
+  - libev4
+  - libev-dev
+  - python
+  - python-dev
+  - python-distribute
+  - python-pip
+app_version: 1.0.3
+
+docker_api_version: 1.18

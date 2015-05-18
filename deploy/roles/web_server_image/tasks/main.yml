@@ -1,0 +1,15 @@
+---
+# file: roles/web_server_image/tasks/main.yml
+
+- name: Build the web server Dockerfile file
+  template:
+    src: Dockerfile.j2
+    dest: "{{ app_src_dir }}/backend/Dockerfile"
+
+- name: Build the web server image
+  docker_image:
+    docker_url: unix://var/run/docker.sock
+    name: "{{ app_maintainer_username }}/{{ app_name  }}"
+    path: "{{ app_src_dir }}/backend"
+    state: present
+    tag: "{{ app_version }}"

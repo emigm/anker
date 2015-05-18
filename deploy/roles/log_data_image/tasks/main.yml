@@ -1,0 +1,10 @@
+---
+# file: roles/log_data_image/task/main.yml
+
+- name: Build the log data image
+  docker_image:
+    docker_url: unix://var/run/docker.sock
+    name: "{{ app_maintainer_username }}/log_data"
+    path: roles/log_data_image/files
+    state: present
+    tag: latest
