@@ -1,6 +1,6 @@
 # Anker
 Anker is the result of a personal initiaciative to start using Ansible and Docker to deploy HTTP Services written in Python.
-The current version deploy an Echo HTTP service in a local environment.
+The current version deploys an Echo HTTP service in a local environment.
 
 # Dependencies
 
