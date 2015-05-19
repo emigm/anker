@@ -13,6 +13,12 @@ Clone the repository and get into the deploy directory.
 ```
 cd anker/deploy
 ```
+Edit the group_vars/all.yml file and replace the value for the following keys:
+```
+app_maintainer_email: your.email@gmail.com
+app_maintainer_name: Your Name
+app_maintainer_username: yourusername
+```
 Build the Docker images.
 ```
 ansible-playbook -i envs/dev/inventory images.yml
