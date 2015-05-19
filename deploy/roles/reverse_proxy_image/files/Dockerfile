@@ -2,7 +2,7 @@
 FROM nginx
 
 # File Author / Maintainer
-MAINTAINER Emiliano Molina <emiliano.molina@intel.com>
+MAINTAINER Emiliano Molina <emiliano.g.molina@gmail.com>
 
 # Copy custom configuration file from the current directory
 COPY nginx.conf /etc/nginx/nginx.conf

@@ -2,7 +2,7 @@
 FROM ubuntu:14.04
 
 # File Author / Maintainer
-MAINTAINER Emiliano Molina <emiliano.molina@intel.com>
+MAINTAINER Emiliano Molina <emiliano.g.molina@gmail.com>
 
 # Create the log directory
 RUN mkdir -p /var/log/webapp
