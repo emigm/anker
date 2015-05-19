@@ -1,0 +1,6 @@
+---
+# file: single_container_site.yml
+
+- hosts: web_servers
+  roles:
+    - container

@@ -1,0 +1,6 @@
+---
+# file: app.yml
+
+- hosts: web_servers
+  roles:
+    - container

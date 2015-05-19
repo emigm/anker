@@ -3,7 +3,6 @@
 
 - hosts: image_registry
   roles:
-    - distributable
     - local_cache_image
     - log_data_image
     - reverse_proxy_image
