@@ -1,6 +1,6 @@
 ---
-# file: app.yml
+# file: python_app.yml
 
 - hosts: web_servers
   roles:
-    - container
+    - distributable
