@@ -19,15 +19,24 @@ app_maintainer_email: your.email@gmail.com
 app_maintainer_name: Your Name
 app_maintainer_username: yourusername
 ```
+Build the Python package.
+```
+ansible-playbook -i envs/dev/inventory python_app.yml
+```
 Build the Docker images.
 ```
 ansible-playbook -i envs/dev/inventory images.yml
 ```
 Run Docker containers.
 ```
-ansible-playbook -i envs/dev/inventory site.yml
+ansible-playbook -i envs/dev/inventory multi_container_runner.yml
 ```
 Check that the Echo HTTP service is up and running.
 ```
 curl -X POST http://localhost/echo -d "Hello"
+```
+
+NOTE: You can go through all the process by executing just one playbook.
+```
+ansible-playbook -i envs/dev/inventory site.yml
 ```
