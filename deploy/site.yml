@@ -1,0 +1,6 @@
+---
+# file: site.yml
+
+- include: python_app.yml
+- include: images.yml
+- include: multi_container_runner.yml
