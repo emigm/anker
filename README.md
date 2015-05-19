@@ -13,7 +13,7 @@ Clone the repository and get into the deploy directory.
 ```
 cd anker/deploy
 ```
-Edit the group_vars/all.yml file and replace the value for the following keys:
+Edit the group_vars/all.yml file and replace the following key values:
 ```
 app_maintainer_email: your.email@gmail.com
 app_maintainer_name: Your Name
