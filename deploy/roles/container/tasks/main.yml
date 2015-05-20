@@ -3,6 +3,7 @@
 
 - name: Run the web server container
   docker:
+    env: "{{ app_conf }}"
     docker_api_version: "{{ docker_api_version }}"
     docker_url: unix://var/run/docker.sock
     image: "{{ app_maintainer_username }}/{{ app_name }}:{{ app_version }}"

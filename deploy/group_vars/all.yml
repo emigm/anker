@@ -1,11 +1,10 @@
 ---
 # file: group_vars/all.yml
 
-app_logger_level: ERROR
 app_maintainer_email: your.email@gmail.com
 app_maintainer_name: Your Name
 app_maintainer_username: yourusername
-app_name: echo_service
+app_name: ECHO_SERVICE
 app_port: 8080
 app_py_pkgs:
   - mock

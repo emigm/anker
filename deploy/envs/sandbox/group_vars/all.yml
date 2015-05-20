@@ -1,0 +1,9 @@
+---
+# file: envs/sandbox/group_vars/all.yml
+
+app_conf:
+    "{{ app_name }}_LOGGER_LEVEL": DEBUG
+    "{{ app_name }}_LOGGER_PATH": /tmp
+    # "{{ app_name }}_PROXY_HOST": http://proxy-us.intel.com
+    # "{{ app_name }}_PROXY_PORT": 911
+    # "{{ app_name }}_NO_PROXY": localhost:127.0.0.0/8

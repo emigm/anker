@@ -7,17 +7,18 @@ APP_NAME = '{{ app_name }}'
 APP_ERR_CODE_PREFIX = APP_NAME
 APP_UUID_LENGTH = 32 # Bytes
 
-{% if proxy_enabled is defined %}
-PROXY_ENABLED = {{ app_proxy_enabled }}
-PROXY_HOST = '{{ app_proxy_host }}'
-PROXY_PORT = {{ app_proxy_port }}
-{% else %}
-PROXY_ENABLED = False
-{% endif %}
+PROXY_HOST = os.environ.get(
+    '{app_name}_PROXY_HOST'.format(app_name=APP_NAME))
+PROXY_PORT = os.environ.get(
+    '{app_name}_PROXY_PORT'.format(app_name=APP_NAME))
+NO_PROXY = os.environ.get(
+    '{app_name}_NO_PROXY'.format(app_name=APP_NAME))
 
 # Logger settings
-LOGGER_LEVEL = '{{ app_logger_level }}'
-LOGGER_PATH = os.path.dirname(os.path.realpath(__file__))
+LOGGER_LEVEL = os.environ[
+    '{app_name}_LOGGER_LEVEL'.format(app_name=APP_NAME)]
+LOGGER_PATH = os.environ[
+    '{app_name}_LOGGER_PATH'.format(app_name=APP_NAME)]
 LOGGER_CONFIG = {
     'version': 1,
     'formatters': {
