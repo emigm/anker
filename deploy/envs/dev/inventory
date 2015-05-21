@@ -1,5 +1,8 @@
 [image_registry]
 localhost   ansible_connection=local
 
+[local]
+localhost   ansible_connection=local
+
 [web_servers]
 localhost   ansible_connection=local
