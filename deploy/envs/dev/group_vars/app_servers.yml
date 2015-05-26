@@ -4,6 +4,4 @@
 conf:
   APP_LOGGER_LEVEL: DEBUG
   APP_LOGGER_PATH: /tmp
-  APP_HTTP_PROXY: http://proxy-us.intel.com:911
-  APP_HTTPS_PROXY: http://proxy-us.intel.com:912
   APP_NO_PROXY: localhost:127.0.0.0/8
