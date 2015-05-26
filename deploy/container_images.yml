@@ -1,7 +1,7 @@
 ---
 # file: images.yml
 
-- hosts: image_registry
+- hosts: image_builders
   roles:
     - local_cache_image
     - log_data_image

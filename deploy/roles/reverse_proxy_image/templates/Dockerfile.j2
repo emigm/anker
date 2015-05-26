@@ -1,0 +1,17 @@
+# {{ ansible_managed }}
+# Set the base image to Nginx
+FROM nginx
+
+# File Author / Maintainer
+MAINTAINER {{ app_maintainer_name }} <{{ app_maintainer_email }}>
+
+# Proxy settings
+{% if conf.APP_HTTP_PROXY is defined %}
+ENV http_proxy {{ conf.APP_HTTP_PROXY }}
+{% endif %}
+{% if conf.APP_HTTPS_PROXY is defined %}
+ENV https_proxy {{ conf.APP_HTTPS_PROXY }}
+{% endif %}
+
+# Copy custom configuration file from the current directory
+COPY nginx.conf /etc/nginx/nginx.conf

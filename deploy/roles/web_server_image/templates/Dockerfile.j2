@@ -9,6 +9,18 @@ FROM ubuntu:14.04
 # File Author / Maintainer
 MAINTAINER {{ app_maintainer_name }} <{{ app_maintainer_email }}>
 
+# Labels
+LABEL app.name={{ app_name }}
+LABEL app.version={{ app_version }}
+
+# Proxy settings
+{% if conf.APP_HTTP_PROXY is defined %}
+ENV http_proxy {{ conf.APP_HTTP_PROXY }}
+{% endif %}
+{% if conf.APP_HTTPS_PROXY is defined %}
+ENV https_proxy {{ conf.APP_HTTPS_PROXY }}
+{% endif %}
+
 # Install system packages
 RUN apt-get update && apt-get install -y \
     {% for pkg in app_sys_pkgs %}{{ pkg }} {% endfor %}

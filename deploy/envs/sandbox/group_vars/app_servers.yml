@@ -1,0 +1,7 @@
+---
+# file: envs/sandbox/group_vars/app_servers.yml
+
+conf:
+  APP_LOGGER_LEVEL: DEBUG
+  APP_LOGGER_PATH: /tmp
+  APP_NO_PROXY: localhost:127.0.0.0/8

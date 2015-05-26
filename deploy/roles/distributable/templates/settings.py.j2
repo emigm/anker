@@ -3,22 +3,17 @@
 import os
 
 # Application settings
-APP_NAME = '{{ app_name }}'
+APP_NAME = '{{ app_name|upper }}'
 APP_ERR_CODE_PREFIX = APP_NAME
 APP_UUID_LENGTH = 32 # Bytes
 
-PROXY_HOST = os.environ.get(
-    '{app_name}_PROXY_HOST'.format(app_name=APP_NAME))
-PROXY_PORT = os.environ.get(
-    '{app_name}_PROXY_PORT'.format(app_name=APP_NAME))
-NO_PROXY = os.environ.get(
-    '{app_name}_NO_PROXY'.format(app_name=APP_NAME))
+HTTP_PROXY = os.environ.get('APP_HTTP_PROXY')
+HTTPS_PROXY = os.environ.get('APP_HTTPS_PROXY')
+NO_PROXY = os.environ.get('APP_NO_PROXY')
 
 # Logger settings
-LOGGER_LEVEL = os.environ[
-    '{app_name}_LOGGER_LEVEL'.format(app_name=APP_NAME)]
-LOGGER_PATH = os.environ[
-    '{app_name}_LOGGER_PATH'.format(app_name=APP_NAME)]
+LOGGER_LEVEL = os.environ['APP_LOGGER_LEVEL']
+LOGGER_PATH = os.environ['APP_LOGGER_PATH']
 LOGGER_CONFIG = {
     'version': 1,
     'formatters': {

@@ -1,7 +1,0 @@
----
-# file: envs/dev/group_vars/all.yml
-
-app_conf:
-    "{{ app_name }}_LOGGER_LEVEL": DEBUG
-    "{{ app_name }}_LOGGER_PATH": /tmp
-    "{{ app_name }}_NO_PROXY": localhost:127.0.0.0/8

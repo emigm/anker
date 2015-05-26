@@ -3,11 +3,12 @@
 
 - name: Run the web server container
   docker:
-    env: "{{ app_conf }}"
+    env: "{{ conf }}"
     docker_api_version: "{{ docker_api_version }}"
     docker_url: unix://var/run/docker.sock
     image: "{{ app_maintainer_username }}/{{ app_name }}:{{ app_version }}"
     name: "{{ app_name }}"
-    publish_all_ports: true
+    ports:
+      - 8080:8080
     restart_policy: on-failure
     state: reloaded

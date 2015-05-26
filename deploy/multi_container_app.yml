@@ -1,6 +1,6 @@
 ---
 # file: multi_container_site.yml
 
-- hosts: web_servers
+- hosts: app_servers
   roles:
     - multi_container

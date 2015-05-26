@@ -1,10 +1,10 @@
 ---
 # file: group_vars/all.yml
 
-app_maintainer_email: your.email@gmail.com
-app_maintainer_name: Your Name
-app_maintainer_username: yourusername
-app_name: ECHO_SERVICE
+app_maintainer_email: emiliano.g.molina@gmail.com
+app_maintainer_name: Emiliano Molina
+app_maintainer_username: emigm
+app_name: echo_service
 app_port: 8080
 app_py_pkgs:
   - mock
@@ -13,7 +13,7 @@ app_py_pkgs:
   - pycurl
   - strict_rfc3339
   - tornado
-app_src_dir: ../src
+app_src_dir: "{{ '../src' | realpath }}"
 app_sys_pkgs:
   - build-essential
   - libcurl4-openssl-dev

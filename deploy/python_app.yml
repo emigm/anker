@@ -1,6 +1,6 @@
 ---
 # file: python_app.yml
 
-- hosts: local
+- hosts: local_host
   roles:
     - distributable

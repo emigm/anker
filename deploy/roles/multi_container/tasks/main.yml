@@ -21,25 +21,31 @@
 
 - name: Run the web server containers
   docker:
+    count: "{{ ansible_processor_vcpus }}"
     docker_api_version: "{{ docker_api_version }}"
     docker_url: unix://var/run/docker.sock
+    env: "{{ conf }}"
     image: "{{ app_maintainer_username }}/{{ app_name }}:{{ app_version }}"
     links: 
       - local_cache
-    name: "{{ app_name }}_{{ item }}"
     restart_policy: on-failure
     state: reloaded
     volumes_from: 
       - log_data
-  with_sequence: count={{ ansible_processor_vcpus }}
+
+- name: Get the running web server containers
+  docker_facts:
+    label: app.name={{ app_name }}
+    status: running
+    quiet: true
+  register: result
 
 - name: Run the reverse proxy container
   docker:
     docker_api_version: "{{ docker_api_version }}"
     docker_url: unix://var/run/docker.sock
     image: "{{ app_maintainer_username }}/nginx:latest"
-    links:
-      - echo_service_1
+    links: "{{ result.containers|map(attribute='Id')|list }}"
     name: reverse_proxy
     ports: 
       - 80:80

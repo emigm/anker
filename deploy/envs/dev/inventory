@@ -1,8 +1,8 @@
-[image_registry]
+[image_builders]
 localhost   ansible_connection=local
 
-[local]
+[local_host]
 localhost   ansible_connection=local
 
-[web_servers]
+[app_servers]
 localhost   ansible_connection=local

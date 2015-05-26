@@ -1,0 +1,22 @@
+# {{ ansible_managed }}
+# Set the base image to Nginx
+FROM ubuntu:14.04
+
+# File Author / Maintainer
+MAINTAINER {{ app_maintainer_name }} <{{ app_maintainer_email }}>
+
+# Proxy settings
+{% if conf.APP_HTTP_PROXY is defined %}
+ENV http_proxy {{ conf.APP_HTTP_PROXY }}
+{% endif %}
+{% if conf.APP_HTTPS_PROXY is defined %}
+ENV https_proxy {{ conf.APP_HTTPS_PROXY }}
+{% endif %}
+
+# Create the log directory
+RUN mkdir -p /var/log/webapp
+
+# Create the log volume
+VOLUME /var/log/webapp
+
+CMD ["/bin/sh"]

@@ -1,17 +1,17 @@
 ---
 # file: roles/distributable/tasks/main.yml
 
-- name: Build the application setting.py file
+- name: Build the setting.py file
   template:
     src: settings.py.j2
     dest: "{{ app_src_dir }}/backend/backend/app/settings.py"
 
-- name: Build the application setup.py file
+- name: Build the setup.py file
   template:
     src: setup.py.j2
     dest: "{{ app_src_dir }}/backend/setup.py"
 
-- name: Build the application package
+- name: Build the package
   command:
-    python setup.py sdist
-    chdir: "{{ app_src_dir }}/backend"
+    python setup.py sdist \
+    chdir={{ app_src_dir }}/backend
