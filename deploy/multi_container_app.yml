@@ -3,4 +3,4 @@
 
 - hosts: app_servers
   roles:
-    - multi_container
+    - ext_app_cont

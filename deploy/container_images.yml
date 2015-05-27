@@ -1,9 +1,9 @@
 ---
-# file: images.yml
+# file: container_images.yml
 
 - hosts: image_builders
   roles:
-    - local_cache_image
-    - log_data_image
-    - reverse_proxy_image
-    - web_server_image 
+    - cache_img
+    - log_img
+    - rev_proxy_img
+    - app_img
