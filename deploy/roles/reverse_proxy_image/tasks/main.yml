@@ -21,6 +21,6 @@
     docker_url: unix://var/run/docker.sock
     name: "{{ app_maintainer_username }}/nginx"
     path: roles/reverse_proxy_image/files
-    # state: present
+    state: present
     state: build
     tag: latest

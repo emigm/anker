@@ -3,7 +3,7 @@
 
 app_maintainer_email: emiliano.g.molina@gmail.com
 app_maintainer_name: Emiliano Molina
-app_maintainer_username: emigm
+app_maintainer_username: egmf
 app_name: echo_service
 app_port: 8080
 app_py_pkgs:
@@ -13,7 +13,7 @@ app_py_pkgs:
   - pycurl
   - strict_rfc3339
   - tornado
-app_src_dir: "{{ '../src' | realpath }}"
+app_src_dir: "{{ '../src'|realpath }}"
 app_sys_pkgs:
   - build-essential
   - libcurl4-openssl-dev
