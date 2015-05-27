@@ -1,5 +1,5 @@
 ---
-# file: roles/distributable/tasks/main.yml
+# file: roles/py_artifact/tasks/main.yml
 
 - name: Build the setting.py file
   template:
@@ -11,7 +11,7 @@
     src: setup.py.j2
     dest: "{{ app_src_dir }}/backend/setup.py"
 
-- name: Build the package
+- name: Build the artifact
   command:
     python setup.py sdist \
     chdir={{ app_src_dir }}/backend

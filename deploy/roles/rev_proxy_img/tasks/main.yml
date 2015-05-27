@@ -1,26 +1,26 @@
 ---
-# file: roles/reverse_proxy_image/task/main.yml
+# file: roles/rev_proxy_img/task/main.yml
 
 - name: Create files directory
   file:
-    path: roles/reverse_proxy_image/files
+    path: roles/rev_proxy_img/files
     state: directory
 
 - name: Build the Dockerfile file
   template:
     src: Dockerfile.j2
-    dest: roles/reverse_proxy_image/files/Dockerfile
+    dest: roles/rev_proxy_img/files/Dockerfile
 
 - name: Build nginx.conf file
   template:
     src: nginx.conf.j2
-    dest: roles/reverse_proxy_image/files/nginx.conf
+    dest: roles/rev_proxy_img/files/nginx.conf
 
 - name: Build the image
   docker_image:
     docker_url: unix://var/run/docker.sock
     name: "{{ app_maintainer_username }}/nginx"
-    path: roles/reverse_proxy_image/files
+    path: roles/rev_proxy_img/files
     state: present
     state: build
     tag: latest

@@ -1,9 +1,9 @@
 ---
-# file: roles/web_server_image/tasks/main.yml
+# file: roles/app_img/tasks/main.yml
 
 - name: Create files directory
   file:
-    path: roles/local_cache_image/files
+    path: roles/app_img/files
     state: directory
 
 - name: Build the Dockerfile file
