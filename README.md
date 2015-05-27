@@ -38,5 +38,5 @@ curl -X POST http://localhost/echo -d "Hello"
 
 NOTE: You can go through all the process by executing just one playbook.
 ```
-ansible-playbook -i envs/dev/inventory site.yml
+ansible-playbook -i envs/dev/inventory app.yml
 ```
