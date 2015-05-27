@@ -3,4 +3,4 @@
 
 - hosts: local_host
   roles:
-    - distributable
+    - py_artifact
