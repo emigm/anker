@@ -46,10 +46,16 @@ def main():
 
         containers = cli.containers(
             all=all_, filters=filters, quiet=quiet)
+        ansible_facts = {
+            'docker_facts': {
+                'containers': containers,
+            },
+        }
     except Exception as ex:
         module.fail_json(msg=ex.message)
 
-    module.exit_json(changed=True, containers=containers)
+    module.exit_json(
+        changed=True, ansible_facts=ansible_facts)
 
 
 # Module entry point

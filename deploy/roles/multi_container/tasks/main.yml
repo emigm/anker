@@ -38,7 +38,6 @@
     label: app.name={{ app_name }}
     quiet: true
     status: running
-  register: result
 
 - name: Create the host nginx conf.d directory
   file:
@@ -55,7 +54,7 @@
     docker_api_version: "{{ docker_api_version }}"
     docker_url: unix://var/run/docker.sock
     image: "{{ app_maintainer_username }}/nginx:latest"
-    links: "{{ result.containers|map(attribute='Id')|list }}"
+    links: "{{ docker_facts.containers|map(attribute='Id')|list }}"
     name: reverse_proxy
     ports: 
       - 80:80

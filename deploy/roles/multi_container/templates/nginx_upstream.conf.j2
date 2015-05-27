@@ -2,7 +2,7 @@
 
 upstream {{ app_name }} {
     least_conn;
-    {% for id in result.containers|map(attribute="Id")|list %}
+    {% for id in docker_facts.containers|map(attribute="Id")|list %}
     server {{ id }}:8080;
     {% endfor %}
 }
