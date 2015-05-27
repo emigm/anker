@@ -36,9 +36,19 @@
 - name: Get the running web server containers
   docker_facts:
     label: app.name={{ app_name }}
-    status: running
     quiet: true
+    status: running
   register: result
+
+- name: Create the host nginx conf.d directory
+  file:
+    dest: "{{ ansible_env.HOME }}/docker/{{ app_name }}/nginx/conf.d/" 
+    state: directory
+
+- name: Build nginx upstream configuration
+  template:
+    src: nginx_upstream.conf.j2
+    dest: "{{ ansible_env.HOME }}/docker/{{ app_name }}/nginx/conf.d/upstream.conf"
 
 - name: Run the reverse proxy container
   docker:
@@ -51,3 +61,5 @@
       - 80:80
     restart_policy: on-failure
     state: reloaded
+    volumes:
+      - "{{ ansible_env.HOME }}/docker/{{ app_name }}/nginx/conf.d/:/etc/nginx/conf.d:ro"

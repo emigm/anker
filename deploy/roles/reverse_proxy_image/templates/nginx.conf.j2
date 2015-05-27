@@ -1,9 +1,9 @@
-daemon  off;
+# {{ ansible_managed }}
 user    nginx;
 
 worker_processes      auto;
 worker_rlimit_nofile  2048;
-working_directory     /var/crash;
+#working_directory     /var/crash;
 
 pid        /var/run/nginx.pid;
 lock_file  /var/run/nginx.lock;
