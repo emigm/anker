@@ -1,5 +1,5 @@
 ---
-# file: multi_container_site.yml
+# file: run_multi_cont.yml
 
 - hosts: app_servers
   roles:

@@ -1,5 +1,5 @@
 ---
-# file: container_images.yml
+# file: build_cont_imgs.yml
 
 - hosts: image_builders
   roles:
