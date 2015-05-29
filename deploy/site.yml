@@ -1,6 +1,6 @@
 ---
-# file: app.yml
+# file: site.yml
 
-- include: python_app.yml
-- include: container_images.yml
-- include: multi_container_app.yml
+- include: build_py_app.yml
+- include: build_cont_imgs.yml
+- include: run_multi_cont.yml
