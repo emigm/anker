@@ -40,3 +40,6 @@ NOTE: You can go through all the process by executing just one playbook.
 ```
 ansible-playbook -i envs/dev/inventory site.yml
 ```
+
+ENJOY IT.
+
